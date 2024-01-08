@@ -2,10 +2,8 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
 interface DecodedUser {
-  // Define the properties you expect in your decoded user object
   id: string;
   username: string;
-  // Add more properties as needed
 }
 
 declare global {

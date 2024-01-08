@@ -1,3 +1,5 @@
+import process from "process";
+
 export const config = {
     jwtSecret: process.env.JWT_SECRET || '',
     db: {

@@ -1,8 +1,22 @@
-import { Entity, PrimaryGeneratedColumn, Column  } from 'typeorm';
+const { Entity, PrimaryGeneratedColumn, Column } = require("typeorm");
 
-export class User {
+
+@Entity()
+class User {
+    @PrimaryGeneratedColumn()
     id!: number;
-    name!: string;
-    email!: string;
-    password!: string;
+
+    @Column({ unique: true })
+    username: string;
+
+    @Column()
+    password: string;
+
+
+    constructor(username: string, password: string /* Add other parameters */) {
+        this.username = username;
+        this.password = password;
+    }
 }
+
+export default User;
